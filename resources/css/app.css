@@ -1,0 +1,134 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+@source '../js/**/*.js';
+
+@theme {
+    --font-sans: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Cascadia Code', ui-monospace, SFMono-Regular, Consolas, monospace;
+
+    /* Institutional Navy & Neutral Slate Palette */
+    --color-navy-950: #091122;
+    --color-navy-900: #0F172A;
+    --color-navy-800: #1E293B;
+    --color-navy-700: #1E3A8A;
+    --color-navy-600: #1D4ED8;
+}
+
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    html {
+        font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        @apply bg-slate-50 text-slate-900 font-sans text-sm antialiased selection:bg-blue-900 selection:text-white;
+    }
+}
+
+@layer components {
+    /* Primary & Secondary Action Buttons */
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-md bg-slate-900 px-3.5 py-2 text-xs font-semibold text-white shadow-xs transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-blue {
+        @apply inline-flex items-center justify-center gap-2 rounded-md bg-blue-800 px-3.5 py-2 text-xs font-semibold text-white shadow-xs transition hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-800 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-3.5 py-2 text-xs font-semibold text-slate-700 shadow-2xs transition hover:bg-slate-50 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-emerald {
+        @apply inline-flex items-center justify-center gap-2 rounded-md bg-emerald-700 px-3.5 py-2 text-xs font-semibold text-white shadow-xs transition hover:bg-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-700 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-danger {
+        @apply inline-flex items-center justify-center gap-2 rounded-md bg-rose-600 px-3.5 py-2 text-xs font-semibold text-white shadow-xs transition hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-600 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-danger-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-md border border-rose-200 bg-white px-3 py-1.5 text-xs font-semibold text-rose-700 transition hover:bg-rose-50 focus:outline-none focus:ring-2 focus:ring-rose-500;
+    }
+
+    .btn-xs {
+        @apply px-2.5 py-1.5 text-xs;
+    }
+
+    /* Form Inputs */
+    .input-label {
+        @apply mb-1.5 block text-xs font-semibold text-slate-700;
+    }
+
+    .input-field {
+        @apply block w-full rounded-md border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-2xs placeholder:text-slate-400 focus:border-blue-800 focus:ring-1 focus:ring-blue-800 disabled:bg-slate-100 disabled:text-slate-500;
+    }
+
+    .input-error {
+        @apply border-rose-500 focus:border-rose-600 focus:ring-rose-600;
+    }
+
+    .error-msg {
+        @apply mt-1 text-xs font-medium text-rose-600;
+    }
+
+    /* Surface Panels */
+    .panel {
+        @apply rounded-lg border border-slate-200 bg-white shadow-2xs;
+    }
+
+    .panel-header {
+        @apply flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-5 py-3.5;
+    }
+
+    .panel-title {
+        @apply text-sm font-semibold text-slate-900;
+    }
+
+    /* Data Tables */
+    .table-container {
+        @apply overflow-x-auto;
+    }
+
+    .table-pro {
+        @apply min-w-full divide-y divide-slate-200 text-left text-sm;
+    }
+
+    .table-pro thead {
+        @apply bg-slate-50/90;
+    }
+
+    .table-pro th {
+        @apply whitespace-nowrap px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500;
+    }
+
+    .table-pro tbody {
+        @apply divide-y divide-slate-100 bg-white;
+    }
+
+    .table-pro td {
+        @apply px-4 py-3.5 align-middle text-slate-700;
+    }
+
+    .table-pro tbody tr:hover {
+        @apply bg-slate-50/70;
+    }
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+}
