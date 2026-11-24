@@ -1,27 +1,29 @@
-*.log
-.DS_Store
-.env
-.env.backup
-.env.production
-.phpactor.json
-.phpunit.result.cache
-/.codex
-/.cursor/
-/.idea
-/.nova
-/.phpunit.cache
-/.vscode
-/.zed
-/auth.json
+# Dependencies
 /node_modules
-/public/build
-/public/fonts-manifest.dev.json
-/public/hot
-/public/storage
-/storage/*.key
-/storage/pail
-/vendor
-_ide_helper.php
-Homestead.json
-Homestead.yaml
+/.pnp
+.pnp.*
+
+# Next.js & Netlify
+/.next/
+/out/
+/.netlify/
+/build
+
+# Local Dev Data Store
+/.data/
+
+# Misc
+.DS_Store
+*.pem
 Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env*.local
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
